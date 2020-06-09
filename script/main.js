@@ -2,11 +2,17 @@ let movimientosComputadora = [];
 let movimientosUsuario = [];
 let ronda = 0;
 
-document.querySelector('button[type=button]').onclick = empezarJuego;
+document.querySelector('#jugar-boton').onclick = empezarJuego;
 
-actualizarEstado("Tocá 'jugar' para arrancar.");
+actualizarEstado("Tocá 'empezar' para arrancar.");
 actualizarNumeroRonda('-');
 bloquearInputUsuario();
+
+document.querySelector("#cambiar-dificultad-boton").onclick = function(){
+    ocultarJuego();
+    mostrarDificultades();
+    resetear();
+}
 
 function empezarJuego(){
     resetear();
@@ -20,8 +26,6 @@ function resetear(){
 }
 
 function manejarRonda(){
-    chequearJuegoGanado();
-
     actualizarEstado("Turno de la computadora");
     bloquearInputUsuario();
 
@@ -30,10 +34,10 @@ function manejarRonda(){
 
     const delayTurnoJugador = (movimientosComputadora.length + 1) * 1000;
 
-    movimientosComputadora.forEach(function($cuadro, i){
+    movimientosComputadora.forEach(function(cuadro, i){
         const tiempoMilisegundos = (i + 1) * 1000;
         setTimeout(function(){
-            resaltarColor($cuadro);
+            resaltarColor(cuadro);
         }, tiempoMilisegundos);
     });
 
@@ -71,13 +75,6 @@ function perder(){
     actualizarEstado("Perdiste, apreta el boton para volver a jugar.", error = true);
 }
 
-function chequearJuegoGanado(){
-    if(movimientosComputadora.length === 2){
-        ganar();
-        return;
-    }
-}
-
 function manejarInputUsuario(event){
     const $cuadro = event.target;
     resaltarColor($cuadro);
@@ -91,7 +88,12 @@ function manejarInputUsuario(event){
 
     if(movimientosUsuario.length === movimientosComputadora.length){
         bloquearInputUsuario();
-        setTimeout(manejarRonda, 1000);
+        if(movimientosComputadora.length === cantidadRondas){
+            ganar();
+            return;
+        } else {
+            setTimeout(manejarRonda, 1000);
+        }
     }
 }
 
@@ -125,7 +127,46 @@ function actualizarEstado(estado, error = false, victoria = false){
         $estado.classList.add('alert-success');
     } else {
         $estado.classList.remove('alert-danger');
-        $estado.classList.remove('alert-primary');
+        $estado.classList.remove('alert-success');
         $estado.classList.add('alert-primary');
     }
+}
+
+let cantidadRondas;
+
+function determinarDificultad(boton){
+    switch(boton.id){
+        case 'facil':
+            cantidadRondas = 5;
+            break;
+        case 'intermedio':
+            cantidadRondas = 10;
+            break;
+        case 'dificil':
+            cantidadRondas = 15;
+            break;
+    }
+    
+    document.querySelector("#dificultades").onclick = function(){
+        mostrarJuego();
+        ocultarDificultades();
+
+        document.querySelector("#cant-rondas-dificultad").textContent = cantidadRondas;
+    }
+}
+
+function mostrarJuego(){
+    document.querySelector("#juego").className = "";
+}
+
+function ocultarJuego(){
+    document.querySelector("#juego").className = "oculto";
+}
+
+function mostrarDificultades(){
+    document.querySelector("#container-dificultad").className = "";
+}
+
+function ocultarDificultades(){
+    document.querySelector("#container-dificultad").className = "oculto";
 }

@@ -9,35 +9,51 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="row row1">
-            <div class="col-sm-8 pija">
-                <div class="alert alert-primary mb-0" role="alert" id="estado"></div>
-            </div>
-            <div class="col-sm pija">
-                <strong>Ronda - <strong id="ronda">#</strong></strong>
-            </div>
-            <div class="col-sm pija">
-                <button type="button" class="btn btn-light">Jugar</button>
-            </div>
+    <div id="container-dificultad">
+        <h1 class="titulo">SIMON CON BOOTSTRAP</h1>
+        <h3 class="titulo">Elegí la dificultad</h3>
+        
+        <div id="dificultades" class="row">
+            <button id="facil" type="button" class="btn btn-dark" onclick="determinarDificultad(this)">Facil</button>
+            <button id="intermedio" type="button" class="btn btn-dark" onclick="determinarDificultad(this)">Intermedio</button>
+            <button id="dificil" type="button" class="btn btn-dark" onclick="determinarDificultad(this)">Dificil</button>
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <div id="cuadro-1" class="cuadro"></div>
-            </div>
-            <div class="col-sm">
-                <div id="cuadro-2" class="cuadro"></div>
+    <div id="juego" class="oculto">
+        <div class="container">
+            <div class="row row1">
+                <div class="col-sm-6 pija">
+                    <div class="alert alert-primary mb-0" role="alert" id="estado"></div>
+                </div>
+                <div class="col-sm-2 pija">
+                    <strong>Ronda <strong id="ronda">#</strong>/<strong id="cant-rondas-dificultad"></strong></strong>
+                </div>
+                <div class="col-sm-2 pija">
+                    <button id="jugar-boton" type="button" class="btn btn-light">Empezar</button>
+                </div>
+                <div class="col-sm-2 pija">
+                    <button id="cambiar-dificultad-boton" type="button" class="btn btn-light">Cambiar dificultad</button>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm">
-                <div id="cuadro-3" class="cuadro"></div>
+    
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div id="cuadro-1" class="cuadro"></div>
+                </div>
+                <div class="col-sm">
+                    <div id="cuadro-2" class="cuadro"></div>
+                </div>
             </div>
-            <div class="col-sm">
-                <div id="cuadro-4" class="cuadro"></div>
+            <div class="row">
+                <div class="col-sm">
+                    <div id="cuadro-3" class="cuadro"></div>
+                </div>
+                <div class="col-sm">
+                    <div id="cuadro-4" class="cuadro"></div>
+                </div>
             </div>
         </div>
     </div>

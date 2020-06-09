@@ -14,13 +14,12 @@ body {
 }
 
 .pija{
-    /* border: 1px solid white; */
     margin: 0;
     padding: 0;
 }
 
 .btn-light {
-    width: 150px;
+    width: 160px;
 }
 
 strong{
@@ -41,4 +40,34 @@ strong{
 
 #cuadro-4 {
     background-color: #2ECC71;
+}
+
+.oculto {
+    display: none;
+}
+
+/* 
+    Estilo de la dificultad del juego
+*/
+
+#container-dificultad {
+    border: 1px solid rgb(172, 171, 171);
+    border-radius: 7px;
+    min-height: 200px;
+    margin: auto;
+    width: 600px;
+    margin-top: 150px;
+    background-color: rgb(185, 185, 185);
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: -10px;
+    text-shadow: 0px 3px 2px rgba(150, 150, 150, 1);
+}
+
+#container-dificultad button{
+    margin: auto;
+    margin-top: 40px;
 }
