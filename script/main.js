@@ -12,6 +12,9 @@ document.querySelector("#cambiar-dificultad-boton").onclick = function(){
     ocultarJuego();
     mostrarDificultades();
     resetear();
+    clearTimeout(timeoutMovimientoComputadora);
+    clearTimeout(timeoutMovimientoJugador);
+    return false;
 }
 
 function empezarJuego(){
@@ -28,6 +31,9 @@ function resetear(){
     bloquearInputUsuario();
 }
 
+let timeoutMovimientoComputadora;
+let timeoutMovimientoJugador;
+
 function manejarRonda(){
     actualizarEstado("Turno de la computadora");
     bloquearInputUsuario();
@@ -37,14 +43,14 @@ function manejarRonda(){
 
     const delayTurnoJugador = (movimientosComputadora.length + 1) * 1000;
 
-    movimientosComputadora.forEach(function(cuadro, i){
+    timeoutMovimientoComputadora = movimientosComputadora.forEach(function(cuadro, i){
         const tiempoMilisegundos = (i + 1) * 1000;
         setTimeout(function(){
             resaltarColor(cuadro);
         }, tiempoMilisegundos);
     });
 
-    setTimeout(function(){
+    timeoutMovimientoJugador = setTimeout(function(){
         actualizarEstado("Turno del usuario");
         desbloquearInputUsuario();
     }, delayTurnoJugador);
