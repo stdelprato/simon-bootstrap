@@ -23,6 +23,9 @@ function resetear(){
     movimientosComputadora = [];
     movimientosUsuario = [];
     ronda = 0;
+    actualizarEstado("Tocá 'empezar' para arrancar.");
+    actualizarNumeroRonda('-');
+    bloquearInputUsuario();
 }
 
 function manejarRonda(){
