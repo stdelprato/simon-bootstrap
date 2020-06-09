@@ -1,0 +1,44 @@
+body {
+    background-color: rgb(58, 58, 58);
+}
+
+.cuadro {
+    height: 200px;
+    opacity: 0.5;
+}
+
+.row1 {
+    margin: 10px 0;
+    align-items: center;
+    text-align: center;
+}
+
+.pija{
+    /* border: 1px solid white; */
+    margin: 0;
+    padding: 0;
+}
+
+.btn-light {
+    width: 150px;
+}
+
+strong{
+    color: white;
+}
+
+#cuadro-1 {
+    background-color: rgb(231, 76, 60);
+}
+
+#cuadro-2 {
+    background-color: rgb(46, 134, 193);
+}
+
+#cuadro-3 {
+    background-color: #F1C40F;
+}
+
+#cuadro-4 {
+    background-color: #2ECC71;
+}
