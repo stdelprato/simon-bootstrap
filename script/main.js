@@ -85,7 +85,7 @@ function perder(){
 
 function manejarInputUsuario(event){
     const $cuadro = event.target;
-    resaltarColor($cuadro);
+    resaltarColorUsuario($cuadro);
     movimientosUsuario.push($cuadro);
 
     const $cuadroComputadora = movimientosComputadora[movimientosUsuario.length - 1];
@@ -116,6 +116,13 @@ function resaltarColor($cuadro){
     setTimeout(function(){
         $cuadro.style.opacity = 0.5;
     }, 500);
+}
+
+function resaltarColorUsuario($cuadro){
+    $cuadro.style.opacity = 1;
+    setTimeout(function(){
+        $cuadro.style.opacity = 0.5;
+    }, 300);
 }
 
 function actualizarNumeroRonda(ronda){
@@ -155,12 +162,27 @@ function determinarDificultad(boton){
             break;
     }
     
-    document.querySelector("#dificultades").onclick = function(){
-        mostrarJuego();
-        ocultarDificultades();
+    let botonesDificultad = document.querySelectorAll("#dificultades button");
 
-        document.querySelector("#cant-rondas-dificultad").textContent = cantidadRondas;
-    }
+    botonesDificultad.forEach(function(boton) {
+        boton.addEventListener("click", function(){
+            seleccionarDificultad();
+        })
+    })
+
+    // document.querySelector("#dificultades").onclick = function(){
+    //     mostrarJuego();
+    //     ocultarDificultades();
+
+    //     document.querySelector("#cant-rondas-dificultad").textContent = cantidadRondas;
+    // }
+}
+
+function seleccionarDificultad(){
+    mostrarJuego();
+    ocultarDificultades();
+
+    document.querySelector("#cant-rondas-dificultad").textContent = cantidadRondas;
 }
 
 function mostrarJuego(){

@@ -4,6 +4,14 @@
         width: 180px;
     }
 
+    #container-dificultad {
+        width: 100vw;
+    }
+
+    #dificultades {
+        margin: 0 auto;
+    }
+
     .circulos, .container-juego, .row-circulos, #container-dificultad, #dificultades {
         width: calc(180px * 2);
     }
