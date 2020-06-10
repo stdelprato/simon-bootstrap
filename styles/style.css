@@ -1,10 +1,24 @@
+:root {
+    --circulos-size: 250px;
+}
+
 body {
     background-color: rgb(58, 58, 58);
 }
 
-.cuadro {
-    height: 200px;
+.circulo {
+    height: 250px;
+    width: 250px;
     opacity: 0.5;
+}
+
+.circulos {
+    width: calc(var(--circulos-size) * 2);
+    text-align: center;
+}
+
+.row-circulos {
+    width: calc(var(--circulos-size) * 2);
 }
 
 .row1 {
@@ -26,20 +40,24 @@ strong{
     color: white;
 }
 
-#cuadro-1 {
+#circulo-1 {
     background-color: rgb(231, 76, 60);
+    border-radius: 250px 0 0 0;
 }
 
-#cuadro-2 {
+#circulo-2 {
     background-color: rgb(46, 134, 193);
+    border-radius: 0 250px 0 0;
 }
 
-#cuadro-3 {
+#circulo-3 {
     background-color: #F1C40F;
+    border-radius: 0 0 0 250px;
 }
 
-#cuadro-4 {
+#circulo-4 {
     background-color: #2ECC71;
+    border-radius: 0 0 250px 0;
 }
 
 .oculto {

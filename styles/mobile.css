@@ -1,0 +1,10 @@
+@media only screen and (max-width: 640px){
+    .circulo {
+        height: 180px;
+        width: 180px;
+    }
+
+    .circulos, .container-juego, .row-circulos, #container-dificultad, #dificultades {
+        width: calc(180px * 2);
+    }
+}

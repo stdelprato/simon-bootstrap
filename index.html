@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" media="(max-width: 640px)" href="./styles/mobile.css">
     <title>simonDice</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
     </div>
 
     <div id="juego" class="oculto">
-        <div class="container">
+        <div class="container container-juego">
             <div class="row row1">
                 <div class="col-sm-6 pija">
                     <div class="alert alert-primary mb-0" role="alert" id="estado"></div>
@@ -37,24 +38,17 @@
                 </div>
             </div>
         </div>
+        
+        <br>
     
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                    <div id="cuadro-1" class="cuadro"></div>
-                </div>
-                <div class="col-sm">
-                    <div id="cuadro-2" class="cuadro"></div>
-                </div>
+        <div class="container circulos">
+            <div class="row row-circulos">
+                <div id="circulo-1" class="circulo"></div>
+                <div id="circulo-2" class="circulo"></div>
             </div>
-            <br>
-            <div class="row">
-                <div class="col-sm">
-                    <div id="cuadro-3" class="cuadro"></div>
-                </div>
-                <div class="col-sm">
-                    <div id="cuadro-4" class="cuadro"></div>
-                </div>
+            <div class="row row-circulos">
+                <div id="circulo-3" class="circulo"></div>
+                <div id="circulo-4" class="circulo"></div>
             </div>
         </div>
     </div>

@@ -61,13 +61,13 @@ function manejarRonda(){
 }
 
 function bloquearInputUsuario(){
-    document.querySelectorAll('.cuadro').forEach(function($cuadro){
+    document.querySelectorAll('.circulo').forEach(function($cuadro){
         $cuadro.onclick = function(){};
     });
 }
 
 function desbloquearInputUsuario(){
-    document.querySelectorAll('.cuadro').forEach(function($cuadro){
+    document.querySelectorAll('.circulo').forEach(function($cuadro){
         $cuadro.onclick = manejarInputUsuario;
     })
 }
@@ -107,7 +107,7 @@ function manejarInputUsuario(event){
 }
 
 function cuadroRandom(){
-    const $cuadros = document.querySelectorAll('.cuadro');
+    const $cuadros = document.querySelectorAll('.circulo');
     const indice = Math.floor(Math.random() * $cuadros.length);
     return $cuadros[indice];
 }
